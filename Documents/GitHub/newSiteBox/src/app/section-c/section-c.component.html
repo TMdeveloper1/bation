@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="progress-bar-container" 
+       [class.exceeds]="productService.calculateSubtotal() > 200">
+    <div class="progress-bar" 
+         [style.width.%]="calculateFillPercentage()" 
+         aria-valuemin="0" 
+         aria-valuemax="100">
+      <span *ngIf="productService.calculateSubtotal() <= 200">
+        Subtotal: ${{ productService.calculateSubtotal() }}
+      </span>
+      <span *ngIf="productService.calculateSubtotal() > 200">
+        Excediste el valor de $200 por ${{ excessAmount() }}
+      </span>
+    </div>
+  </div>
+
+  <div class="box-image">
+    <img src="../../assets/img/Untitled-1.png" alt="jc box">
+  </div>
+</div>

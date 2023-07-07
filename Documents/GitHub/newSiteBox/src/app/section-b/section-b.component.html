@@ -1,0 +1,18 @@
+<div class="container-fluid">
+  <div class="container-fluid">
+    <h1>Lista de productos</h1>
+    <ul>
+      <li *ngFor="let product of productService.getProducts(); index as i">
+        <div class="product-info">
+          <span class="product-number">{{ i + 1 }}.</span>
+          <span>{{ product.name }}</span>
+          <span class="qty-subtotal">{{ product.quantity }}</span>
+          <span class="qty-subtotal"> -- ${{ productService.calculateProductSubtotal(product) }}</span>
+          <input [(ngModel)]="product.quantity" type="number" min="1" max="999" class="qty-input">
+          <button (click)="productService.removeProduct(i)">x</button>
+        </div>
+      </li>
+    </ul>
+    
+  </div>
+</div>

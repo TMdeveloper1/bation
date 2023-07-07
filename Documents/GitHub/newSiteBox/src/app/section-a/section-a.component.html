@@ -1,0 +1,29 @@
+<form (ngSubmit)="addProduct()">
+    <label>
+      URL or link:
+      <input [(ngModel)]="product.url" name="url" required class="text=input">
+     
+    </label>
+    <label>
+      Name of product:
+      <input [(ngModel)]="product.name" name="name" required class="text=input">
+    </label>
+    <label>
+      Price of product:
+      <input [(ngModel)]="product.price" type="number" name="price" require dclass="text=input">
+    </label>
+    <label>
+      Weight of product:
+      <input [(ngModel)]="product.weight" type="number" name="weight" required class="text=input">
+    </label>
+    <label>
+      Weight unit:
+      <select [(ngModel)]="product.weightUnit" name="weightUnit">
+        <option value="kg">kg</option>
+        <option value="libras">libras</option>
+        <option value="onzas">onzas</option>
+      </select>
+    </label>
+    <button type="submit">Add</button>
+  </form>
+  

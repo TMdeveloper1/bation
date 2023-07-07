@@ -1,0 +1,10 @@
+<div class="container">
+  <h2>Carrito</h2>
+  <ul>
+    <li *ngFor="let item of cartItems">
+      <!-- Display each cart item details -->
+      {{ item.name }} - {{ item.price }} - {{ item.quantity }}
+    </li>
+  </ul>
+  <button (click)="makeOrder()">Make Order</button>
+</div>
